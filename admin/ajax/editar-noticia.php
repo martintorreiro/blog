@@ -112,7 +112,7 @@ if(isset($_GET["editar"])){
                 while($row = $resFotos->fetch_assoc()){
                     echo "<li>
                             <img src='../fotos-noticias/".$row["foto"]."' alt='foto noticia'>
-                            <a href='service/borrar.php?id=".$row["id"]."&foto=".$row["foto"]."'>x</a>
+                            <button class='borrar-foto' data-idFoto=".$row["id"]." data-foto=".$row["foto"].">x</button>
                         </li>";
                 };
 
@@ -131,6 +131,17 @@ if(isset($_GET["editar"])){
     </div>
 
 </div>
+
+
+<script>
+$(".borrar-foto").click((e) => {
+
+
+
+
+
+})
+</script>
 
 
 <?php
