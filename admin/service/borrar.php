@@ -51,10 +51,16 @@ if(isset($_GET["categoria"])){
 
      if($res){
         unlink("../../fotos-noticias/$foto");
-        header("Location: ../listar-noticias.php?res-delete=ok");
+        $respuesta = array();
+        $respuesta['resultado']=1;
+        $respuesta['mensaje']="La foto ha sido borrada";
     }else{
-        header("Location: ../listar-noticias.php?res-delete=err");
+        $respuesta = array();
+        $respuesta['resultado']=0;
+        $respuesta['mensaje']="Error al eliminar la imagen";
     }; 
+
+    echo json_encode($respuesta);
 }
 
 ?>

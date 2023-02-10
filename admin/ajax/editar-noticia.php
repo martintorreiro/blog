@@ -12,12 +12,7 @@ if(isset($_GET["editar"])){
                 LEFT JOIN categoria cat ON n.id_categoria = cat.id
                 WHERE n.id = $id";
 
-    $consultaFotos = "SELECT * FROM fotos WHERE id_noticia = $id ORDER BY orden";         
-         
     $res = $db->query($consulta);
-    $resFotos = $db->query($consultaFotos);
-
-               
 
     if($row = $res->fetch_assoc()){
 
@@ -106,17 +101,8 @@ if(isset($_GET["editar"])){
     <div class="marg-b-40">
         <h3>Fotos</h3>
         <div class="flex ">
-            <ul class="listado-fotos flex jc-sb wrap">
-                <?php
+            <ul class="listado-fotos flex jc-sb wrap" id="listado-fotos">
 
-                while($row = $resFotos->fetch_assoc()){
-                    echo "<li>
-                            <img src='../fotos-noticias/".$row["foto"]."' alt='foto noticia'>
-                            <button class='borrar-foto' data-idFoto=".$row["id"]." data-foto=".$row["foto"].">x</button>
-                        </li>";
-                };
-
-            ?>
             </ul>
             <div class="añadir-foto">
                 <h4 class="marg-b-40">Añadir imagenes</h4>
@@ -132,21 +118,17 @@ if(isset($_GET["editar"])){
 
 </div>
 
-
+<script src="js/getFotosNoticias.js"></script>
+<script src="js/guardarFotos.js"></script>
 <script>
-$(".borrar-foto").click((e) => {
+getFotosNoticias(<?php echo $id?>);
 
-
-
-
-
-})
+guardarFotos();
 </script>
 
 
 <?php
                 }
             }
-
-            
+           
         ?>
