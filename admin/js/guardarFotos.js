@@ -1,8 +1,9 @@
 const guardarFotos = () => {
-  const form = document.querySelectorAll("#formulario-fotos");
-  form.addEventListener("submit", () => {
-    e.preventDefault();
+  const formulario = document.getElementById("formulario-fotos");
+  formulario.addEventListener("submit", (e) => {
     const formData = new FormData(e.target);
+    e.preventDefault();
+    console.log(formData);
     $.post(`service/guardar-fotos.php?`, formData, function (data) {});
   });
 };
