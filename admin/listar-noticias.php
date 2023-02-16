@@ -19,7 +19,7 @@ function cargarEventos() {
     $("#enlace-noticia").click(function() {
         $("#nueva-noticia").load("ajax/nueva-noticia.php", function() {
             $("#crear-noticia-cancelar").click(function() {
-                $("#nueva-noticia").html("<button id='enlace-noticia' class='marg-b-40 flex'>\
+                $("#nueva-noticia").html("<button id='enlace-noticia' class='boton'>\
                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                         <span> Añadir Noticia</span>\
                     </button>");
@@ -35,7 +35,7 @@ function cargarEventos() {
         $("#nueva-noticia").load(`ajax/editar-noticia.php?editar=${idNoticia}`,
             function() {
                 $("#editar-noticia-cancelar").click(function() {
-                    $("#nueva-noticia").html("<button id='enlace-noticia' class='marg-b-40 flex'>\
+                    $("#nueva-noticia").html("<button id='enlace-noticia' class='boton'>\
                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                         <span> Añadir Noticia</span>\
                     </button>");
@@ -68,7 +68,7 @@ function cargarEventos() {
 
                     <div class='controles flex'>
                         <button class='editar boton' data-id='".$row['id']."'><i class='fa-solid fa-pencil'></i></button>
-                        <a href='service/borrar.php?noticia=".$row['id']."'><i class='fa-solid fa-trash-can'></i></a>
+                        <a class='boton' href='service/borrar.php?noticia=".$row['id']."'><i class='fa-solid fa-trash-can'></i></a>
                     </div>
 
                 </li>";

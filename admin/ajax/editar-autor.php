@@ -8,31 +8,34 @@
 ?>
 
 
-<div>
-    <h2 class="marg-b-20">Editar autor.</h2>
+<div class="formulario_estandar">
+    <div class="cabecera">
+        <h2 class="marg-b-20">Editar autor</h2>
+    </div>
+
 
     <form class="formulario-base flex column" action="service/editar.php" method="post" enctype="multipart/form-data">
 
         <input type="hidden" name="autor" value=<?php echo $row['id'] ?>>
-        <div class="marg-b-20 flex column jc-start ai-start ">
-            <div class="marg-b-20">
+        <div class="form_body">
+            <div class="form_group">
                 <label for="categoria">Nombre del autor: </label>
                 <input type="text" id="categoria" name="nombre" maxlength="100" required
                     value="<?php echo $row['nombre'] ?>">
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="usuario">Nombre de usuario: </label>
                 <input type="text" id="usuario" name="usuario" maxlength="50" required
                     value="<?php echo $row['usuario'] ?>">
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="contraseña">Contraseña: </label>
                 <input type="password" id="contraseña" name="contraseña" maxlength="50" placeholder="Nueva contraseña">
             </div>
 
-            <div class="marg-b-20 flex contenedor-img-autor">
+            <div class="form_group flex contenedor-img-autor">
                 <label class="flex jc-center ai-center marg-r-20" for="imagen">
                     <img src="../fotos-usuarios/<?php echo $row['foto'] ?>" alt="imagen">
                     <span>Cambiar Imagen</span>
@@ -40,12 +43,13 @@
                 <input type="file" id="imagen" name="imagen" accept=".jpg, .jpeg, .png">
 
             </div>
-
-            <div class="flex ">
-                <button class="boton" type="button" id="editar-autor-cancelar">Cancelar</button>
-                <button class="boton" name="editar_aut">Editar</button>
-            </div>
         </div>
+
+        <div class="controls">
+            <button class="cancelar" type="button" id="editar-autor-cancelar">Cancelar</button>
+            <button name="editar_aut">Editar</button>
+        </div>
+
 
 
     </form>

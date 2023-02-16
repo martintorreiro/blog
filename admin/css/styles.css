@@ -7,6 +7,10 @@
   font-family: "News Cycle", "Open Sans", sans-serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .w-960 {
   width: 960px;
 }
@@ -99,6 +103,10 @@
   margin-bottom: 40px;
 }
 
+.marg-t-40 {
+  margin-top: 40px;
+}
+
 .mayu-1 {
   text-transform: capitalize;
 }
@@ -107,14 +115,60 @@
   text-transform: uppercase;
 }
 
+.boton {
+  padding: 6px 12px;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+}
+
+/* ---------------------------HEADER ------------------------- */
+
+header .logo img {
+  width: 50px;
+  padding: 10px;
+}
+
+header nav a {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* ---------------------------ADMIN HOME ------------------------- */
+
+.nav_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.nav_home a > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  width: 120px;
+  background-color: #007bff;
+}
+.nav_home a {
+  margin: 10px;
+  color: white;
+}
+
+.nav_home a > div i {
+  margin-bottom: 10px;
+}
+
 /* ---------------------------LISTADO CATEGORIAS------------------------- */
 
 .contenedor-lista {
   padding: 30px;
-}
-
-.contenedor-lista a {
-  color: black;
 }
 
 .listado-categorias li {
@@ -123,43 +177,8 @@
   padding: 10px 5px;
 }
 
-.listado-categorias li a {
-  color: lightcoral;
-}
-
 .listado-categorias .nombre {
   overflow-x: hidden;
-}
-
-.controles a {
-  padding: 5px 10px;
-}
-
-.formulario-base {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-.formulario-base > div > div {
-  display: flex;
-}
-
-.formulario-base input {
-  padding: 5px;
-}
-
-.boton {
-  font-size: 14px;
-  color: black;
-  border: 1px solid black;
-  padding: 5px;
-  margin-right: 10px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.boton:hover {
-  cursor: pointer;
-  transform: scale(1.1);
 }
 
 .contenedor-img-autor input {
@@ -200,25 +219,6 @@
   color: lightcoral;
 }
 
-.form-nueva-noticia > div > div {
-  width: 100%;
-  display: flex;
-}
-
-.form-nueva-noticia > div > div label {
-  width: 250px;
-}
-
-.form-nueva-noticia > div > div input[type="text"] {
-  width: 620px;
-}
-
-.form-nueva-noticia > div > div textarea {
-  resize: none;
-  height: 200px;
-  width: 620px;
-}
-
 .form-nueva-noticia > div > div input,
 .form-nueva-noticia > div > div select,
 .form-nueva-noticia > div > div textarea {
@@ -248,4 +248,102 @@
 
 .añadir-foto label.boton {
   display: inline-block;
+}
+
+/* -------------------FORMULARIO ----------------- */
+
+.formulario_estandar {
+  background-color: white;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 500px;
+}
+.formulario_estandar .cabecera {
+  padding: 12px 20px;
+  background-color: #007bff;
+}
+
+.formulario_estandar .cabecera h2 {
+  font-size: 18px;
+  color: white;
+}
+
+.formulario_estandar .form_body {
+  width: 100%;
+  padding: 20px;
+}
+
+.formulario_estandar .form_group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario_estandar .form_group label {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.formulario_estandar .form_group textarea {
+  resize: none;
+  height: 80px;
+}
+
+.formulario_estandar .form_group textarea,
+.formulario_estandar .form_group input[type="text"],
+.formulario_estandar .form_group input[type="password"],
+.formulario_estandar .form_group select,
+.formulario_estandar .form_group input[type="time"],
+.formulario_estandar .form_group input[type="date"] {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(192, 192, 192);
+  background-color: white;
+}
+
+.formulario_estandar .form_group textarea:focus,
+.formulario_estandar .form_group input[type="text"]:focus,
+.formulario_estandar .form_group input[type="password"]:focus,
+.formulario_estandar .form_group select:focus,
+.formulario_estandar .form_group input[type="time"]:focus,
+.formulario_estandar .form_group input[type="date"]:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
+
+.formulario_estandar .form_group__files input {
+  display: none;
+}
+
+.formulario_estandar .form_group__files label {
+  padding: 6px 12px;
+}
+
+.formulario_estandar .form_group__files label:hover {
+  cursor: pointer;
+}
+
+.formulario_estandar .controls {
+  padding: 20px;
+  text-align: end;
+}
+
+.formulario_estandar .controls button {
+  font-size: 16px;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  background-color: #007bff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.formulario_estandar .controls button.cancelar {
+  background-color: #dc3545;
+}
+
+.formulario_estandar .controls button:hover {
+  opacity: 0.85;
 }

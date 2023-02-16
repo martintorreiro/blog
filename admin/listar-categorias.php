@@ -84,7 +84,7 @@ function cargarEventos() {
     $("#enlace-categoria").click(function() {
         $("#nueva-categoria").load("ajax/nueva-categoria.php", function() {
             $("#nueva-categoria-cancelar").click(function() {
-                $("#nueva-categoria").html("<button id='enlace-categoria'>\
+                $("#nueva-categoria").html("<button class='boton' id='enlace-categoria'>\
                                 <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                                 <span> Añadir Categoría</span>\
                             </button>");
@@ -100,7 +100,7 @@ function cargarEventos() {
         $("#nueva-categoria").load(`ajax/editar-categoria.php?editar=${idCategoria}`,
             function() {
                 $("#editar-categoria-cancelar").click(function() {
-                    $("#nueva-categoria").html("<button id='enlace-categoria' class='marg-b-40 flex'>\
+                    $("#nueva-categoria").html("<button class='boton' id='enlace-categoria' class='marg-b-40 flex'>\
                                                     <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                                                     <span> Añadir Categoria</span>\
                                                 </button>");

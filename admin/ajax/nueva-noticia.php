@@ -5,37 +5,38 @@ $categorias = $db->query("SELECT * FROM categoria");
 $autores = $db->query("SELECT * FROM autor");
 ?>
 
-<div id="crear-noticia-form">
-    <h2 class="marg-b-20">Crear nueva noticia.</h2>
-    <form class="formulario-base form-nueva-noticia flex column" action="service/guardar.php" method="post"
-        enctype="multipart/form-data">
-        <div class="marg-b-20 flex column jc-start ai-start">
-            <div class="marg-b-20">
+<div id="crear-noticia-form" class="formulario_estandar">
+    <div class="cabecera">
+        <h2>Crear nueva noticia</h2>
+    </div>
+    <form action="service/guardar.php" method="post" enctype="multipart/form-data">
+        <div class="form_body">
+            <div class="form_group">
                 <label for="titulo">Titulo: </label>
                 <input type="text" id="titulo" name="titulo" maxlength="100" required placeholder="Categoría...">
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="intro">Intro: </label>
                 <textarea name="intro" id="intro" required></textarea>
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="Texto">Texto: </label>
                 <textarea name="Texto" id="Texto" required></textarea>
-            </div class="marg-b-20">
+            </div class="form_group">
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="imagen">Seleccionar imagen principal: </label>
                 <input type="file" id="imagen" name="imagen" required accept=".jpg, .jpeg, .png">
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="fecha">Fecha: </label>
                 <input type="date" id="fecha" name="fecha" required>
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="autor">Autor: </label>
                 <select name="autor" id="autor">
 
@@ -57,7 +58,7 @@ $autores = $db->query("SELECT * FROM autor");
                 </select>
             </div>
 
-            <div class="marg-b-20">
+            <div class="form_group">
                 <label for="categoria">Categoria: </label>
                 <select name="categoria" id="categoria">
 
@@ -79,13 +80,13 @@ $autores = $db->query("SELECT * FROM autor");
                 </select>
             </div>
 
-
-
-            <div class="flex">
-                <button class="boton" id="crear-noticia-cancelar">Cancelar</button>
-                <button class="boton" name="guardar_not">Enviar</button>
-            </div>
         </div>
+
+        <div class="controls">
+            <button class="cancelar" id="crear-noticia-cancelar">Cancelar</button>
+            <button name="guardar_not">Enviar</button>
+        </div>
+
 
     </form>
 

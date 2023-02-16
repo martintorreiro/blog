@@ -30,8 +30,8 @@
                     </div> 
 
                     <div class='controles flex'>
-                        <button class='editar' data-id=".$row['id']."><i class='fa-solid fa-pencil'></i></button>
-                        <a href='service/borrar.php?autor=".$row['id']."'><i class='fa-solid fa-trash-can'></i></a>
+                        <button class='editar boton' data-id=".$row['id']."><i class='fa-solid fa-pencil'></i></button>
+                        <a class='boton' href='service/borrar.php?autor=".$row['id']."'><i class='fa-solid fa-trash-can'></i></a>
                     </div>
 
                 </li>";
@@ -73,7 +73,7 @@
 
 
         <div id="nuevo-autor">
-            <button id="enlace-autor">
+            <button id="enlace-autor" class="boton">
                 <i class='marg-r-20 fa-solid fa-circle-plus'></i>
                 <span> Añadir Autor</span>
             </button>
@@ -85,7 +85,7 @@
             $("#enlace-autor").click(function() {
                 $("#nuevo-autor").load("ajax/nuevo-autor.php", function() {
                     $("#nuevo-autor-cancelar").click(function() {
-                        $("#nuevo-autor").html("<button id='enlace-autor'>\
+                        $("#nuevo-autor").html("<button class='boton' id='enlace-autor'>\
                                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                                         <span> Añadir Autor</span>\
                                     </button>");
@@ -101,7 +101,7 @@
                 $("#nuevo-autor").load(`ajax/editar-autor.php?editar=${idAutor}`,
                     function() {
                         $("#editar-autor-cancelar").click(function() {
-                            $("#nuevo-autor").html("<button id='enlace-autor'>\
+                            $("#nuevo-autor").html("<button class='boton' id='enlace-autor'>\
                                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                                         <span> Añadir Autor</span>\
                                     </button>");

@@ -12,3 +12,21 @@
 </head>
 
 <body>
+
+    <header class="w-960 centrado flex jc-sb">
+        <div class="logo">
+            <img src='../images/logo.png'>
+        </div>
+
+        <nav class="flex jc-center ai-center">
+            <div class="flex">
+                <ul class="flex">
+                    <li class="marg-r-20"><a href="index.php">Inicio</a></li>
+                    <li class="marg-r-20"><a href="listar-categorias.php">Categorías</a></li>
+                    <li class="marg-r-20"><a href="listar-autores.php">Autores</a></li>
+                    <li class="marg-r-20"><a href="listar-noticias.php">Noticias</a></li>
+                </ul>
+                <span>Hola <?php echo $_SESSION['nombre_autor']?> <a href='logout.php'>Salir</a></span>
+            </div>
+        </nav>
+    </header>
