@@ -10,7 +10,7 @@
    
 ?>
 
-<script>
+<!-- <script>
 $(function() {
     cargarEventos();
 });
@@ -49,7 +49,7 @@ function cargarEventos() {
         return false;
     })
 }
-</script>
+</script> -->
 <div class="contenedor-lista w-960 centrado flex column  jc-center">
 
     <h1 class="marg-b-40 ta-center">Listado de Noticias</h1>
@@ -108,19 +108,19 @@ function cargarEventos() {
                }else if(isset($_GET["res-delete"])&&$_GET["res-delete"]=="err"){
                 echo "<div class='flex respuesta err'><p >Error al borrar la categoría.</p>
                     <a href='listar-noticias.php'>x</a></div>";
-               }
+               } 
 
 
 
         ?>
 
 
-        <!--   <div id="nueva-noticia">
+        <div id="nueva-noticia">
             <button id='enlace-noticia' class='marg-b-40 flex boton'>
                 <i class='marg-r-20 fa-solid fa-circle-plus'></i>
                 <span> Añadir Noticia</span>
             </button>
-        </div> -->
+        </div>
 
 
     </div>
