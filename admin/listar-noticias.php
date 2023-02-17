@@ -18,7 +18,9 @@ $(function() {
 function cargarEventos() {
     $("#enlace-noticia").click(function() {
         $("#nueva-noticia").load("ajax/nueva-noticia.php", function() {
+            $("#nueva-noticia").addClass("modal")
             $("#crear-noticia-cancelar").click(function() {
+                $("#nueva-noticia").removeClass("modal")
                 $("#nueva-noticia").html("<button id='enlace-noticia' class='boton'>\
                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                         <span> Añadir Noticia</span>\
@@ -34,7 +36,9 @@ function cargarEventos() {
         const idNoticia = $(this).attr("data-id")
         $("#nueva-noticia").load(`ajax/editar-noticia.php?editar=${idNoticia}`,
             function() {
+                $("#nueva-noticia").addClass("modal")
                 $("#editar-noticia-cancelar").click(function() {
+                    $("#nueva-noticia").removeClass("modal")
                     $("#nueva-noticia").html("<button id='enlace-noticia' class='boton'>\
                         <i class='marg-r-20 fa-solid fa-circle-plus'></i>\
                         <span> Añadir Noticia</span>\
@@ -111,12 +115,12 @@ function cargarEventos() {
         ?>
 
 
-        <div id="nueva-noticia">
+        <!--   <div id="nueva-noticia">
             <button id='enlace-noticia' class='marg-b-40 flex boton'>
                 <i class='marg-r-20 fa-solid fa-circle-plus'></i>
                 <span> Añadir Noticia</span>
             </button>
-        </div>
+        </div> -->
 
 
     </div>
